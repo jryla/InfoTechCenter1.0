@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import sys
 import time
 
@@ -20,3 +21,5 @@ while x != 20:
         ellipses = 0
     if x == 20:
         print(f"\n\n\n{bold}OS Booted Up - Retina Scanned - Access Granted{reset_color}")
+=======
+>>>>>>> parent of 479860b (Merge branch 'WelcomeScreen' into BetaTestDev)
