@@ -61,7 +61,7 @@ weather_conditions = {
 }
 
 # Function to respond to weather conditions and adjust vehicle response system (VRS)
-def vehicleResponseSystem():
+def vehicleRS():
    # Get the condition if the weatherAlert exists in the weather_conditions dictionary
    condition = weather_conditions.get(weatherAlert)
 
@@ -82,7 +82,7 @@ def vehicleResponseSystem():
 
 
 # Call the vehicleResponseSystem function to run the VRS based on the current weather alert
-vehicleResponseSystem()
+vehicleRS()
 
 
 def vehicleRS():
