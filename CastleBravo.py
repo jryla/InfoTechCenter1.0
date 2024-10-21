@@ -1,7 +1,7 @@
 import sys  # Importing sys for controlling output display
 import time  # Importing time to introduce delay in output
 
-<<<<<<< HEAD
+
 # ANSI escape codes for green text and bold text
 green = "\033[92m"  # Green text color
 bold = "\033[1m"  # Bold text
@@ -33,21 +33,60 @@ while x != 20:
     # After 20 iterations, print the final message
     if x == 20:
         print(f"\n\n\n{bold}OS Booted Up - Retina Scanned - Access Granted{reset_color}")  # Final boot-up message
-=======
-print("\nWelcome to InfoTechCenter V1.0")  # Printing welcome message
 
-x = 0  # Initializing counter to track iterations
-ellipses = 0  # Initializing counter to track the number of dots
+print("\n*********************************************************\n")
 
-# Loop to simulate the system booting process
-while x != 20:  # Loop will run until x reaches 20
-    x += 1  # Incrementing the iteration counter by 1
-    message = ("InfoTech Center System Booting" + "." * ellipses)  # Creating boot message with dots based on 'ellipses' count
-    ellipses += 1  # Adding an additional dot for the next iteration
-    sys.stdout.write("\r" + message)  # Using '\r' to overwrite the current line with the updated message
-    time.sleep(.5)  # Pausing the execution for 0.5 seconds to simulate a loading effect
-    if ellipses == 4:  # If the ellipses reach 4 dots, reset it back to 0 to loop the dot animation
-        ellipses = 0
-    if x == 20:  # When x reaches 20, end the loop
-        print("\n\nOperating System Booted Up - Retina Scanned - Access Granted\n")  # Final message after the boot simulation is complete
->>>>>>> GitHub/WelcomeScreen
+print("Weather Branch\n")
+
+#Import Libraries Here
+import random
+from time import sleep
+
+def weather():
+    weatherforecast = ["snowy", "blizzard", "rainy", "windy", "icy", "sunny"]
+    weathercondition = random.choice(weatherforecast)
+    return weathercondition
+
+weatherAlert = weather()
+
+
+
+# Dictionary to store weather conditions and corresponding delay and speed limit values
+weather_conditions = {
+   "snowy": (10, 80),      # 30 min delay, 55 MPH speed limit for snowy weather
+   "blizzard": (35, 70),   # 45 min delay, 45 MPH speed limit for blizzard
+   "rainy": (3, 90),      # 15 min delay, 65 MPH speed limit for rainy weather
+   "windy": (3, 100),      # 10 min delay, 70 MPH speed limit for windy conditions
+   "icy": (3, 80)         # 50 min delay, 30 MPH speed limit for icy conditions
+}
+
+# Function to respond to weather conditions and adjust vehicle response system (VRS)
+def vehicleResponseSystem():
+   # Get the condition if the weatherAlert exists in the weather_conditions dictionary
+   condition = weather_conditions.get(weatherAlert)
+
+   if condition:
+       delay, speed_limit = condition  # Unpack the tuple for delay and speed limit
+       # Notify the user of the delay due to the weather condition
+       print(f"\nThe National Weather Service has Set an Alarm to {delay} Minutes Because"
+             f" of the expected {weatherAlert} Weather Conditions.")
+       sleep(1)  # Simulate a pause for a more realistic effect
+       # Notify the user of the speed limit enforced by the VRS based on the weather
+       print(f"\nVRS System Has Been Engaged, Only Allowing {speed_limit}-MPH.")
+   else:
+       # If the weather condition is not listed (clear skies or unknown condition)
+       print(f"\nThe National Weather Service is Calling for {weatherAlert} Weather, Drive Carefully!")
+       sleep(1)  # Simulate a pause
+       # Notify the user that the VRS has been disengaged
+       print("\nVRS System Has Been Disengaged.")
+
+
+# Call the vehicleResponseSystem function to run the VRS based on the current weather alert
+vehicleResponseSystem()
+
+
+def vehicleRS():
+    if weatherAlert == "snowy":
+        print("\nThe National Weather service has updated our alarm by 30 minutes \nof the forecast of", weatherAlert, "weather conditions.")
+
+vehicleRS()
